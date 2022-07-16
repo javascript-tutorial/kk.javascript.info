@@ -1,122 +1,123 @@
-# An Introduction to JavaScript
+# JavaScript-ке кіріспе
 
-Let's see what's so special about JavaScript, what we can achieve with it, and what other technologies play well with it.
+JavaScript-тің ерекшелігі неде, онымен не нәрсеге қол жеткізуге болатынын және басқа қандай технологиялар онымен жақсы жұмыс істейтінін қарастырайық.
 
-## What is JavaScript?
+## JavaScript дегеніміз не?
 
-*JavaScript* was initially created to "make web pages alive".
+*JavaScript* бастапқыда "веб-парақшаларды жандандыру" үшін жасалған.
 
-The programs in this language are called *scripts*. They can be written right in a web page's HTML and run automatically as the page loads.
+Бұл тілдегі бағдарламалар *скрипттер* деп аталады. Оларды веб-парақшаның HTML-iне енгізуге болады және олар парақша жүктелген кезде автоматты түрде іске қосылады.
 
-Scripts are provided and executed as plain text. They don't need special preparation or compilation to run.
+Скрипттер қарапайым мәтін түрінде беріледі және орындалады. Орындалу үшін оларға арнайы дайындық пен компиляция қажет емес.
 
-In this aspect, JavaScript is very different from another language called [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
+Бұл тұрғыда JavaScript [Java](https://kk.wikipedia.org/wiki/Java_(бағдарламалау_тілі)) деп аталатын басқа тілден айтарлықтай ерекшеленеді.
 
-```smart header="Why is it called <u>Java</u>Script?"
-When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
+```smart header="Неге ол <u>Java</u>Script деп аталады?"
+JavaScript енді құрылып жатқанда "LiveScript" деп аталатын. Бірақ дәл сол кезде Java өте танымал болғандықтан, енді шығып келе жатқан тілді Java-ның "інісі" сияқты қылып таныстыра салған жөн деп шешім қабылданды.
 
-But as it evolved, JavaScript became a fully independent language with its own specification called [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), and now it has no relation to Java at all.
+Бірақ дамыған сайын JavaScript [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript) деп аталатын өзіндік сипаттамасы бар толық тәуелсіз тілге айналды, енді оның Java-мен ешқандай байланысы жоқ.
 ```
 
-Today, JavaScript can execute not only in the browser, but also on the server, or actually on any device that has a special program called [the JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
+Бүгінгі күні JavaScript браузерде ғана емес, сонымен қатар серверде де, [JavaScript қозғалтқышы](https://en.wikipedia.org/wiki/JavaScript_engine) деп аталатын арнайы бағдарламасы бар кез келген құрылғыда да орындала алады.
+``
+Браузердің өзінің қозғалтқышы бар, оны кейде «JavaScript виртуалды машинасы» деп атайды.
 
-The browser has an embedded engine sometimes called a "JavaScript virtual machine".
+Әр түрлі қозғалтқыштарда әр түрлі «код атаулары» бар. Мысалы:
 
-Different engines have different "codenames". For example:
+- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- Chrome, Opera мен Edge-те.
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- Firefox-та.
+- ...IE үшін "Chakra", Safari үшін "JavaScriptCore", "Nitro" және "SquirrelFish" сияқты басқа да код атаулары бар.
 
-- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome, Opera and Edge.
-- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
-- ...There are other codenames like "Chakra" for IE, "JavaScriptCore", "Nitro" and "SquirrelFish" for Safari, etc.
+Бұл атауларды есте сақтауға ​​пайдалы болады, себебі олар әзірлеушілердің мақалаларында жиі қолданылады. Біз оларды да қолданатын боламыз. Мысалы, егер "X функционалдылығы V8-пен қолдайтын болса", онда «X» Chrome, Opera мен Edge-те жұмыс істеуі ықтимал.
 
-The terms above are good to remember because they are used in developer articles on the internet. We'll use them too. For instance, if "a feature X is supported by V8", then it probably works in Chrome, Opera and Edge.
+```smart header="Қозғалтқыштар қалай жұмыс істейді?"
 
-```smart header="How do engines work?"
+Қозғалтқыштар құрылысы күрделі. Бірақ олардың негіздерін түсіну оңай.
 
-Engines are complicated. But the basics are easy.
+1. (Веб шолғыш болса, Кірістірілген) қозғалтқыш скриптті оқиды ("талдайды").
+2. Содан кейін ол скриптті машиналық тіліне түрлендіреді ("компиляциялайды").
+3. Осыдан кейін машина коды іске қосылады және өте жылдам жұмыс істейді.
 
-1. The engine (embedded if it's a browser) reads ("parses") the script.
-2. Then it converts ("compiles") the script to the machine language.
-3. And then the machine code runs, pretty fast.
-
-The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and further optimizes the machine code based on that knowledge.
+Қозғалтқыш процестің әр кезеңінде оңтайландыруды қолданады. Ол тіпті құрастырылған скрипттерді жұмыс кезінде бақылайды, ол арқылы өтетін деректерді талдайды және осы білімге сүйене отырып, машиналық кодын одан әрі оңтайландырады.
 ```
 
-## What can in-browser JavaScript do?
+## JavaScript веб-шолғышта не істей алады?
 
-Modern JavaScript is a "safe" programming language. It does not provide low-level access to memory or CPU, because it was initially created for browsers which do not require it.
+Қазіргі JavaScript - бұл "қауіпсіз" бағдарламалау тілі. Ол жадқа немесе процессорға төменгі деңгейлік қолжетімділікке рұқсат бермейді, себебі ол бастапқыда оны қажет етпейтін веб-шолғыштарға үшін жасалған.
 
-JavaScript's capabilities greatly depend on the environment it's running in. For instance, [Node.js](https://wikipedia.org/wiki/Node.js) supports functions that allow JavaScript to read/write arbitrary files, perform network requests, etc.
+JavaScript мүмкіндіктері жұмыс істейтін ортаға тәуелді. Мысалы, [Node.js](https://wikipedia.org/wiki/Node.js) JavaScript-ке кездейсоқ файлдарды оқуға/жазуға, желілік сұраныстарды орындауға мүмкіндік беретін функцияларды қолдайды. т.б.
 
-In-browser JavaScript can do everything related to webpage manipulation, interaction with the user, and the webserver.
+Браузердегі JavaScript веб-парақшаны манипуляциялауға, қолданушымен өзара әрекеттеуне және веб-серверге байланысты барлық нәрселерді жасай алады.
 
-For instance, in-browser JavaScript is able to:
+Мысалы, веб-шолғыштағы JavaScript келесі әрекеттерді орындай алады:
 
-- Add new HTML to the page, change the existing content, modify styles.
-- React to user actions, run on mouse clicks, pointer movements, key presses.
-- Send requests over the network to remote servers, download and upload files (so-called [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) and [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) technologies).
-- Get and set cookies, ask questions to the visitor, show messages.
-- Remember the data on the client-side ("local storage").
+- Парақшаға жаңа HTML қосу, бар мазмұнды өзгерту, стильдерді өзгерту.
+- Пайдаланушының әрекеттеріне, тінтуір шерутлеріне, көрсеткіш қозғалуына және перне басылуына жауап беру.
+- Қашықтағы серверлерге желі арқылы сұратымдарды жіберу, файлдарды жүктеу және жіберу ([AJAX](https://kk.wikipedia.org/wiki/Ajax) және [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) деп аталатын технологиялар).
+- Кукилерді алу және орнату, келушіге сұрақтар қою, хабарламаларды көрсету.
+- Клиент жағындағы деректерді есте сақтау ("local storage").
 
-## What CAN'T in-browser JavaScript do?
+## JavaScript веб шолғышта не істей алмайды?
 
-JavaScript's abilities in the browser are limited for the sake of a user's safety. The aim is to prevent an evil webpage from accessing private information or harming the user's data.
+JavaScript-тің браузердегі мүмкіндіктері пайдаланушының қауіпсіздігі үшін шектелген. Бұның мақсаты зұлым веб-парақшаға жеке ақпаратқа қол жеткізуіне немесе пайдаланушының деректеріне зиян келтіруіне жол бермеу.
 
-Examples of such restrictions include:
+Мұндай шектеулердің мысалдары мыналарды қамтиды:
 
-- JavaScript on a webpage may not read/write arbitrary files on the hard disk, copy them or execute programs. It has no direct access to OS functions.
+- Веб-парақшадағы JavaScript қатқыл дисктегі кездейсоқ файлдарды оқи алмайды/жаза алмайды, оларды көшіре алмайды немесе бағдарламаларды орындай алмайды. Оның ОЖ функцияларына тікелей қолжеткімділігі жоқ.
 
-    Modern browsers allow it to work with files, but the access is limited and only provided if the user does certain actions, like "dropping" a file into a browser window or selecting it via an `<input>` tag.
+    Қазіргі веб шолғыштар оған файлдармен жұмыс істеуге мүмкіндік береді, бірақ қолжеткімділік шектеулі және тек пайдаланушы белгілі бір әрекеттерді орындаса ғана қамтамасыз етіледі, мысалы, файлды веб шолғыш терезесіне "тастау" немесе оны `<input>` тег арқылы таңдау.
 
-    There are ways to interact with camera/microphone and other devices, but they require a user's explicit permission. So a JavaScript-enabled page may not sneakily enable a web-camera, observe the surroundings and send the information to the [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
-- Different tabs/windows generally do not know about each other. Sometimes they do, for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other if they come from different sites (from a different domain, protocol or port).
+    Камерамен/микрофонмен және басқа құрылғылармен өзара әрекеттесу әдістері бар, бірақ олар пайдаланушының нақты рұқсатын қажет етеді. JavaScript қосылған парақша жасырынып веб-камераны қосуға, айналаны бақылауға және ақпаратты [ҰҚК-ға](https://kk.wikipedia.org/wiki/Қазақстан_Республикасы_Ұлттық_Қауіпсіздік_Комитеті) жібере алмайды.
+- Әр түрлі қойындылар/терезелер әдетте бір-бірін туралы білмейді. Кейде ғана біледі, мысалы, бір терезе JavaScript қолданып екінші терезені ашады. Бірақ бұл жағдайда да, егер олар әр түрлі сайттардан (басқа доменнен, хаттамадан немесе порттан) келсе, бір парақшадағы JavaScript басқа парақшаға қол жеткізе алмайды.
 
-    This is called the "Same Origin Policy". To work around that, *both pages* must agree for data exchange and contain a special JavaScript code that handles it. We'll cover that in the tutorial.
+    Бұл "Бірдей дереккөз саясаты" (Same Origin Policy) деп аталады. Бұл мәселені шешу үшін *парақшалардың екеуі* мәліметтер алмасуға келісуі керек және оны өңдейтін арнайы JavaScript коды болуы керек. Біз мұны оқулықта қарастырамыз.
 
-    This limitation is, again, for the user's safety. A page from `http://anysite.com` which a user has opened must not be able to access another browser tab with the URL `http://gmail.com` and steal information from there.
-- JavaScript can easily communicate over the net to the server where the current page came from. But its ability to receive data from other sites/domains is crippled. Though possible, it requires explicit agreement (expressed in HTTP headers) from the remote side. Once again, that's a safety limitation.
+    Бұл шектеу тағы да пайдаланушының қауіпсіздігі үшін қажет. Пайдаланушы ашқан `http://anysite.com` сайты басқа шолғыш қойындысына `http://gmail.com` URL мекенжайы бар парақшаға кіре алмауы керек және сол жерден ақпаратты ұрлай алмауы керек.
+- JavaScript қазіргі парақша шыққан серверге желі арқылы оңай хабарласа алады. Бірақ оның басқа сайттардан/домендерден мәлімет алу мүмкіндігі шектелген. Мүмкін болса да, ол қашықты жақтан нақты келісімді (HTTP тақырыптарында көрсетілген) талап етеді. Тағы да, бұл қауіпсіздікке арналған шектеулері.
 
 ![](limitations.svg)
 
-Such limits do not exist if JavaScript is used outside of the browser, for example on a server. Modern browsers also allow plugin/extensions which may ask for extended permissions.
+Егер JavaScript веб шолғыштан тыс, мысалы серверде қолданылса, мұндай шектеулер қолданылмайды. Қазіргі веб шолғыштар сонымен қатар кеңейтілген рұқсаттарды сұрайтын плагиндерге/кеңейтімдерге рұқсат береді.
 
-## What makes JavaScript unique?
+## JavaScript-ті бірегей ететін не?
 
-There are at least *three* great things about JavaScript:
+JavaScript туралы кемінде *үш* керемет нәрсе бар:
 
 ```compare
-+ Full integration with HTML/CSS.
-+ Simple things are done simply.
-+ Supported by all major browsers and enabled by default.
++ HTML/CSS-пен толық интеграция.
++ Қарапайым нәрселер қарапайым түрде жасалады.
++ Барлық негізгі веб шолғыштар оны колдайды және әдепкі бойынша қосады.
 ```
-JavaScript is the only browser technology that combines these three things.
+JavaScript - бұл үш нәрсені біріктіретін жалғыз веб шолғыш технологиясы.
 
-That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
+Бұл JavaScript-ті бірегей етеді. Сондықтан бұл веб шолғыш интерфейстерді құруға ең кең таралған құралы.
 
-That said, JavaScript also allows to create servers, mobile applications, etc.
+Сонымен қатар, JavaScript серверлерді, мобильді қосымшаларды және т.б. жасауға колданылады.
 
-## Languages "over" JavaScript
+## JavaScript-тен «жоғары» тілдері
 
-The syntax of JavaScript does not suit everyone's needs. Different people want different features.
+JavaScript-тің синтаксисі әркімнің қажеттілігіне сәйкес келмейді. Әр түрлі адамдар әр түрлі ерекшеліктерді қалайды.
 
-That's to be expected, because projects and requirements are different for everyone.
+Мұны күтуге болады, өйткені жобалар мен талаптар әркім үшін әр түрлі.
 
-So recently a plethora of new languages appeared, which are *transpiled* (converted) to JavaScript before they run in the browser.
+Жақында веб шолғышта іске қосылмай тұрып JavaScript-ке *транспиляцияланған* (аударылатын) көптеген жаңа тілдер пайда болды.
 
-Modern tools make the transpilation very fast and transparent, actually allowing developers to code in another language and auto-converting it "under the hood".
+Қазіргі заманғы құралдар транспиляцияны өте жылдам және мөлдір етеді, бұл әзірлеушілерге басқа тілде код жасауға мүмкіндік береді және оны "қақпақ астында" автоматты түрде аударады.
 
-Examples of such languages:
+Мұндай тілдердің мысалдары:
 
-- [CoffeeScript](http://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
-- [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
-- [Flow](http://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
-- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
-- [Brython](https://brython.info/) is a Python transpiler to JavaScript that enables the writing of applications in pure Python without JavaScript.
-- [Kotlin](https://kotlinlang.org/docs/reference/js-overview.html) is a modern, concise and safe programming language that can target the browser or Node.
+- [CoffeeScript](http://coffeescript.org/) - бұл JavaScript үшін «синтаксистік қант». Ол ықшамды және нақты код жазуға мүмкіндік беретін қысқа синтаксисті енгізеді. Әдетте, бұл Ruby әзірлеушілерге ұнайды.
+- [TypeScript](http://www.typescriptlang.org/) күрделі жүйелердің дамуы мен қолдауын жеңілдету үшін "деректердің қатаң тұрпаттарын" қосуға шоғырланған. Оны Microsoft әзірледі.
+- [Flow](http://flow.org/) сонымен қатар деректердің тұрпаттарын қосады, бірақ басқаша. Оны Facebook әзірледі.
+- [Dart](https://www.dartlang.org/) веб шолғышсыз ортада (мобильді қосымшалар сияқты) жұмыс істейтін жеке қозғалтқышы бар автономды тіл, бірақ оны JavaScript-ке көшіруге болады. Оны Google әзірледі.
+- [Brython](https://brython.info/) JavaScript-ке арналған Python транспиляторы, ол қосымшаларды JavaScript-сіз таза Python-да жазуға мүмкіндік береді.
+- [Kotlin](https://kotlinlang.org/docs/reference/js-overview.html) веб шолғышқа немесе Node-қа бағытталған заманауи, қысқа және қауіпсіз бағдарламалау тілі.
 
-There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
+Одан әрі басқалар да бар. Әрине, егер біз аударылған тілдердің бірін қолдансақ та, біз не істеп жатқанымызды түсіну үшін JavaScript-ті білуіміз керек.
 
-## Summary
+## Қорытынды
 
-- JavaScript was initially created as a browser-only language, but it is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language, fully integrated with HTML/CSS.
-- There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
+- JavaScript бастапқыда тек веб шолғышқа арналған тіл ретінде құрылды, бірақ қазір ол көптеген басқа орталарда қолданылады.
+- Бүгінгі таңда JavaScript HTML/CSS-те толық интеграцияланған веб шолғыштың ең кең таралған тілі ретінде бірегей орынға ие.
+- JavaScript-ке "аударылатын" және белгілі бір мүмкіндіктерді беретін көптеген тілдер бар. JavaScript-ті меңгергеннен кейін оларға қысқаша болса да қарауға ұсынылады.
+
