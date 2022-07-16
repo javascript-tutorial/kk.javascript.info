@@ -21,7 +21,7 @@
 
     Ол мына жерде орналақан <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>.
 
-Бірақ, көбінесе интернет іздеуді қолдануға ыңғайлырақ. "MDN [term]" сиякты сұрау қолдауға болады, мысалы, `parseInt` функциясын іздеу үшін <https://google.com/search?q=MDN+parseInt>
+Бірақ, көбінесе интернет іздеуді қолдануға ыңғайлырақ. "MDN [іздеу термині]" сиякты сұрау қолдауға болады, мысалы, `parseInt` функциясын іздеу үшін <https://google.com/search?q=MDN+parseInt>
 
 ## Үйлесімділік кестелері
 
