@@ -1,12 +1,12 @@
-importance: 5
+маңыздылығы: 5
 
 ---
 
-# Show an alert
+# Alert шақыру
 
-Create a page that shows a message "I'm JavaScript!".
+«Мен JavaScriptмін!» Хабарын көрсететін бетті жасаңыз.
 
-Do it in a sandbox, or on your hard drive, doesn't matter, just ensure that it works.
+Мұны құмсалғышта немесе қатты дискіде орындаңыз, маңызды емес, оның жұмыс істейтініне көз жеткізіңіз.
 
 [demo src="solution"]
 
