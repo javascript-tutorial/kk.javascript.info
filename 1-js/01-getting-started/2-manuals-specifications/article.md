@@ -1,37 +1,37 @@
 
-# Manuals and specifications
+# Нұсқаулықтар мен сипаттамалар
 
-This book is a *tutorial*. It aims to help you gradually learn the language. But once you're familiar with the basics, you'll need other sources.
+Бұл кітап *оқулық* болып табылады және тілді біртіндеп меңгеруге көмектесуге бағытталған. Бірақ сіз негіздермен таныс болғаннан кейін сізге басқа көздер қажет болады.
 
-## Specification
+## Техникалық сипаттамасы
 
-[The ECMA-262 specification](https://www.ecma-international.org/publications/standards/Ecma-262.htm) contains the most in-depth, detailed and formalized information about JavaScript. It defines the language.
+[ECMA-262 спецификациясында](https://www.ecma-international.org/publications/standards/Ecma-262.htm) JavaScript туралы ең терең, толық және ресми ақпарат бар. Ол тілді анықтайды.
 
-But being that formalized, it's difficult to understand at first. So if you need the most trustworthy source of information about the language details, the specification is the right place. But it's not for everyday use.
+Бірақ бұл рәсімделгендіктен бастапқыда оны түсіну қиын. Егер сізге тіл туралы егжей-тегжейлі ақпараттың ең сенімді көзі қажет болса, спецификацияны қарауға болады. Бірақ бұл күнделікті қолдануға арналмаған.
 
-A new specification version is released every year. In-between these releases, the latest specification draft is at <https://tc39.es/ecma262/>.
+Жыл сайын жаңа спецификация нұсқасы шығарылады. Осы шығарылымдардың арасында спецификацияның соңғы нұсқасы <https://tc39.es/ecma262/> мекенжайында орналасқан.
 
-To read about new bleeding-edge features, including those that are "almost standard" (so-called "stage 3"), see proposals at <https://github.com/tc39/proposals>.
+Ең соңғы мүмкіндіктер туралы, оның ішінде "стандартқа жақын" ("3 кезең" ұсыныстары деп аталады) мүмкіндіктері туралы білу үшін <https://github.com/tc39/proposals> сайтына кіріңіз.
 
-Also, if you're developing for the browser, then there are other specifications covered in the [second part](info:browser-environment) of the tutorial.
+Сонымен қатар, егер сіз веб шолғышқа арналған болсаңыз, онда оқулықтың [екінші бөлігінде] (info:browser-environment) қамтылған басқа да спецификациялар бар.
 
-## Manuals
+## Нұсқаулықтар
 
-- **MDN (Mozilla) JavaScript Reference** is the main manual with examples and other information. It's great to get in-depth information about individual language functions, methods etc.
+- **MDN (Mozilla) JavaScript Reference** - мысалдар мен басқа да ақпараты бар негізгі нұсқаулық. Ол жеке тіл функциялары, әдістері және т.б. туралы терең ақпарат алу үшін өте пайдалы.
 
-    One can find it at <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>.
+    Ол мына жерде орналақан <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>.
 
-Although, it's often best to use an internet search instead. Just use "MDN [term]" in the query, e.g. <https://google.com/search?q=MDN+parseInt> to search for `parseInt` function.
+Бірақ, көбінесе интернет іздеуді қолдануға ыңғайлырақ. "MDN [іздеу термині]" сиякты сұрау қолдауға болады, мысалы, `parseInt` функциясын іздеу үшін <https://google.com/search?q=MDN+parseInt>
 
-## Compatibility tables
+## Үйлесімділік кестелері
 
-JavaScript is a developing language, new features get added regularly.
+JavaScript - бұл үнемі жаңа нәрселермен толықтырылып отыратын дамып келе жатқан тіл.
 
-To see their support among browser-based and other engines, see:
+Веб шолғышқа және басқаларға арналған қозғалтқыштардың қолдауын көру үшін:
 
-- <http://caniuse.com> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <http://caniuse.com/#feat=cryptography>.
-- <https://kangax.github.io/compat-table> - a table with language features and engines that support those or don't support.
+- <http://caniuse.com> - әр функцияның қолдау кестелері. Мысалы, қандай қозғалтқыштар қазіргі криптографиялық функцияларды қолдайтынын білу үшін: <http://caniuse.com/#feat=cryptography>.
+- <https://kangax.github.io/compat-table> - тілдік мүмкіндіктері және оларды қолдайтын және қолдамайтын қозғалтқыштары бар кестесі.
 
-All these resources are useful in real-life development, as they contain valuable information about language details, their support etc.
+Бұл ресурстардың барлығы бағдарламашының күнделікті жұмысында пайдалы, өйткені олар тілді қолдану мүмкіндіктері, оларды қолдау және т.б. туралы құнды ақпарат береді.
 
-Please remember them (or this page) for the cases when you need in-depth information about a particular feature.
+Егер сізге JavaScript ерекшелігі туралы қосымша ақпарат қажет болса, осы сілтемелерді (немесе осы бетке сілтемені) есте сақтаңыз.
