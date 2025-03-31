@@ -12,8 +12,13 @@ IDE жобаны жүктейді (ол көп файлдар болуы мүм�
 
 Егер сіз әлі IDE таңдамаған болсаңыз, келесі опцияларды қарастырыңыз:
 
+<<<<<<< HEAD
 - [Visual Studio Code](https://code.visualstudio.com/) (кросс-платформа, тегін).
 - [WebStorm](http://www.jetbrains.com/webstorm/) (кросс-платформа, ақылы).
+=======
+- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
+- [WebStorm](https://www.jetbrains.com/webstorm/) (cross-platform, paid).
+>>>>>>> 035c5267ba80fa7b55878f7213cbde449b4092d9
 
 Windows жүйесінде "Visual Studio кодымен" шатастырмау үшін "Visual Studio" да бар. "Visual Studio" — .NET платформасы үшін өте қолайлы ақылы және тек Windows үшін қуатты редактор. Ол сондай-ақ JavaScript-те жақсы. [Visual Studio қауымдастығы](https://www.visualstudio.com/vs/community/) тегін нұсқасы да бар.
 
@@ -29,12 +34,20 @@ Windows жүйесінде "Visual Studio кодымен" шатастырмау
 
 Іс жүзінде жеңіл редакторларда көптеген плагиндер болуы мүмкін, соның ішінде каталог деңгейіндегі синтаксистік анализаторлар мен автотолтырғыштар, сондықтан жеңіл редактор мен IDE арасында қатаң шекара жоқ.
 
+<<<<<<< HEAD
 Келесі опциялар назар аударуға лайық:
 
 - [Atom](https://atom.io/) (кросс-платформа, тегін).
 - [Sublime Text](http://www.sublimetext.com) (кросс-платформа, ортақ бағдарлама).
 - [Notepad++](https://notepad-plus-plus.org/) (Windows, тегін).
 - [Vim](http://www.vim.org/) және [Emacs](https://www.gnu.org/software/emacs/), егер сіз оларды қалай пайдалану керектігін білсеңіз тамаша.
+=======
+There are many options, for instance:
+
+- [Sublime Text](https://www.sublimetext.com/) (cross-platform, shareware).
+- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
+- [Vim](https://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
+>>>>>>> 035c5267ba80fa7b55878f7213cbde449b4092d9
 
 ## Дауласпайық
 
@@ -42,4 +55,13 @@ Windows жүйесінде "Visual Studio кодымен" шатастырмау
 
 Біздің үлкен әлемде басқа да тамаша редакторлар бар. Сізге көбірек ұнайтынын таңдаңыз.
 
+<<<<<<< HEAD
 Редакторды таңдау, кез келген басқа құрал сияқты, жеке болып табылады және сіздің жобаларыңызға, әдеттеріңізге және жеке қалауларыңызға байланысты.
+=======
+The choice of an editor, like any other tool, is individual and depends on your projects, habits, and personal preferences.
+
+The author's personal opinion:
+
+- I'd use [Visual Studio Code](https://code.visualstudio.com/) if I develop mostly frontend.
+- Otherwise, if it's mostly another language/platform and partially frontend, then consider other editors, such as XCode (Mac), Visual Studio (Windows) or Jetbrains family (Webstorm, PHPStorm, RubyMine etc, depending on the language).
+>>>>>>> 035c5267ba80fa7b55878f7213cbde449b4092d9
